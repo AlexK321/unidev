@@ -1,6 +1,7 @@
-import { Footer as AntdFooter, Header as AntdHeader, Content } from "antd/es/layout/layout";
-import styled from "styled-components";
-import { device } from "../../constants";
+import { Content, Footer as AntdFooter, Header as AntdHeader } from 'antd/es/layout/layout';
+import styled from 'styled-components';
+
+import { device } from '../../constants';
 
 export const ContextWrapper = styled(Content)`
   width: 100%;
@@ -10,7 +11,7 @@ export const ContextWrapper = styled(Content)`
   max-width: 100vw;
   overflow-x: hidden;
 
-  @media ${device.tablet} { 
+  @media ${device.tablet} {
     overflow-x: auto;
   }
 `;

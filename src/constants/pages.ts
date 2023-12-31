@@ -14,4 +14,4 @@ export const PAGES = {
     id: 'chart',
     title: 'График',
   },
-}
+};

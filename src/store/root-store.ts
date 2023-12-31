@@ -1,6 +1,6 @@
 import { appStateStore } from './subStores/appStateStore';
 import { chartStore } from './subStores/chartStore';
-import {tableStore} from './subStores/tableStore'
+import { tableStore } from './subStores/tableStore';
 import { userStore } from './subStores/userStore';
 
 class RootStore {
