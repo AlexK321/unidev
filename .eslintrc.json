@@ -58,7 +58,7 @@
             "@typescript-eslint/naming-convention": "off",
             "no-plusplus": "off",
 
-            "no-console": "warn",
+            "no-console": ["warn", { "allow": ["warn", "error"] }],
             "quotes": ["error", "single"],
             "jsx-quotes": ["error", "prefer-double"],
             "prefer-const": "error",

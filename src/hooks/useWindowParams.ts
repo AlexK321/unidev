@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+
 import { maxSize } from '../constants';
 
 export enum Devices {

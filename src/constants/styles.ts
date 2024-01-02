@@ -1,8 +1,8 @@
 export const maxSize = {
   mobile: 768,
   tablet: 1140,
-  desktop: 5000
-}
+  desktop: 5000,
+};
 
 export const device = {
   mobile: `(max-width: ${maxSize.mobile}px)`,

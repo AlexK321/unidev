@@ -1,15 +1,15 @@
-import { makeAutoObservable } from "mobx";
+import { makeAutoObservable } from 'mobx';
 
 class AppStateStoreClass {
   theme = 'dark';
 
   constructor() {
-    makeAutoObservable(this)
+    makeAutoObservable(this);
   }
 
   setTheme = (value: string) => {
-    this.theme = value
-  }
+    this.theme = value;
+  };
 }
 
 export const appStateStore = new AppStateStoreClass();

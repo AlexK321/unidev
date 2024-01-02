@@ -1,5 +1,6 @@
-import {createGlobalStyle} from "styled-components";
-import { device } from "./constants";
+import { createGlobalStyle } from 'styled-components';
+
+import { device } from './constants';
 
 const darkTheme = {
   colors: {
@@ -8,7 +9,7 @@ const darkTheme = {
     font: '#E5E4E8',
     main: 'orange',
   },
-}
+};
 
 const lightTheme = {
   colors: {
@@ -17,13 +18,12 @@ const lightTheme = {
     font: 'black',
     main: 'blue',
   },
-}
+};
 
 export const appTheme = {
   dark: darkTheme,
   light: lightTheme,
-}
-
+};
 
 export const GlobalStyles = createGlobalStyle`
   body {
@@ -41,4 +41,4 @@ export const GlobalStyles = createGlobalStyle`
       margin: 0 auto;
     }
   }
-`
+`;

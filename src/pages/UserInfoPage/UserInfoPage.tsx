@@ -1,8 +1,9 @@
-import { List, Typography } from "antd";
-import { observer } from "mobx-react-lite";
-import { useStore } from "../../store";
-import { toJS } from "mobx";
-import { useEffect } from "react";
+import { useEffect } from 'react';
+import { List, Typography } from 'antd';
+import { toJS } from 'mobx';
+import { observer } from 'mobx-react-lite';
+
+import { useStore } from '../../store';
 
 export const UserInfoPage = observer(() => {
   const { userStore } = useStore();
@@ -10,17 +11,17 @@ export const UserInfoPage = observer(() => {
 
   const USER_DESCRIPTION = [
     `Имя: ${userData?.name}`,
-    `Фамилия: ${userData?.surName}`, 
+    `Фамилия: ${userData?.surName}`,
     `Дата рождения: ${userData?.birthDay}`,
     `Адрес: ${userData?.address}`,
     `Телефон: ${userData?.phoneNumber}`,
     `Электронная почта: ${userData?.email}`,
-  ]
+  ];
 
   useEffect(() => {
-    userStore.getUserDataAction()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+    userStore.getUserDataAction();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
@@ -28,7 +29,10 @@ export const UserInfoPage = observer(() => {
       <List
         itemLayout="vertical"
         dataSource={USER_DESCRIPTION}
-        renderItem={(item) => (<div><Typography.Text>{item}</Typography.Text></div>
+        renderItem={item => (
+          <div>
+            <Typography.Text>{item}</Typography.Text>
+          </div>
         )}
       />
     </>
