@@ -4,6 +4,7 @@ import { makeAutoObservable } from 'mobx';
 import { chartApi } from '../../api/api';
 
 class ChartStoreClass {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   chartData: AxiosResponse<any> | null = null;
 
   constructor() {
@@ -14,7 +15,7 @@ class ChartStoreClass {
     try {
       this.chartData = await chartApi.getChart();
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 }

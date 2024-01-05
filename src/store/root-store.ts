@@ -5,8 +5,11 @@ import { userStore } from './subStores/userStore';
 
 class RootStore {
   tableStore = tableStore;
+
   userStore = userStore;
+
   chartStore = chartStore;
+
   appStateStore = appStateStore;
 }
 

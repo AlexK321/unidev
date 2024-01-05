@@ -4,6 +4,7 @@ import { makeAutoObservable } from 'mobx';
 import { mockApi } from '../../api/api';
 
 class UserStoreClass {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   userData: AxiosResponse<any> | null = null;
 
   constructor() {
@@ -14,7 +15,7 @@ class UserStoreClass {
     try {
       this.userData = await mockApi.getUserData();
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 }

@@ -4,6 +4,7 @@ import { makeAutoObservable } from 'mobx';
 import { mockApi } from '../../api/api';
 
 class TableStoreClass {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   products: AxiosResponse<any> | null = null;
 
   constructor() {
@@ -14,7 +15,7 @@ class TableStoreClass {
     try {
       this.products = await mockApi.getProducts();
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 }
