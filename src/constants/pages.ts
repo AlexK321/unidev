@@ -1,4 +1,10 @@
-export const PAGES = {
+export interface IPage {
+  path: string;
+  id: string;
+  title: string;
+}
+
+export const PAGES: { [key: string]: IPage } = {
   USER_INFO_PAGE: {
     path: '/',
     id: 'userInfo',

@@ -2,7 +2,16 @@ import { createGlobalStyle } from 'styled-components';
 
 import { device } from './constants';
 
-const darkTheme = {
+export interface ITheme {
+  colors: {
+    bg: string;
+    bg2: string;
+    font: string;
+    main: string;
+  };
+}
+
+const darkTheme: ITheme = {
   colors: {
     bg: '#8298ab',
     bg2: '#001529',
@@ -11,7 +20,7 @@ const darkTheme = {
   },
 };
 
-const lightTheme = {
+const lightTheme: ITheme = {
   colors: {
     bg: 'white',
     bg2: 'white',
@@ -20,7 +29,7 @@ const lightTheme = {
   },
 };
 
-export const appTheme = {
+export const appTheme: { dark: ITheme; light: ITheme } = {
   dark: darkTheme,
   light: lightTheme,
 };
@@ -36,7 +45,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   div#root {
-    @media ${device.tablet} { 
+    @media ${device.tablet} {
       max-width: 768px;
       margin: 0 auto;
     }

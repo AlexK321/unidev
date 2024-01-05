@@ -1,10 +1,10 @@
 import { ReactElement, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Layout as AntLayout, Menu, MenuTheme, Typography } from 'antd';
+import { Layout as AntLayout, Menu, MenuProps, MenuTheme, RadioChangeEvent, Typography } from 'antd';
 import Sider, { SiderTheme } from 'antd/es/layout/Sider';
 import { observer } from 'mobx-react-lite';
 
-import { PAGES } from '../../constants';
+import { IPage, PAGES } from '../../constants';
 import { Radio, RadioItem } from '../../core/Radio';
 import { useTheme } from '../../hooks/useTheme';
 import { Devices, useWindowParams } from '../../hooks/useWindowParams';
@@ -19,7 +19,7 @@ export const Layout = observer(
     const { device } = useWindowParams();
     const theme = useTheme();
 
-    const [currentItem, setCurrentItem] = useState<Record<string, any> | undefined>(undefined);
+    const [currentItem, setCurrentItem] = useState<IPage | undefined>(undefined);
 
     const items = Object.values(PAGES).map(item => ({
       key: item.title,
@@ -28,12 +28,12 @@ export const Layout = observer(
 
     const [collapsed, setCollapsed] = useState(false);
 
-    const handleChangeTheme = (e: any) => {
+    const handleChangeTheme = (e: RadioChangeEvent) => {
       appStateStore.setTheme(e.target.value);
       onThemeChange(e.target.value);
     };
 
-    const handleSelect = (e: any) => {
+    const handleSelect: MenuProps['onClick'] = e => {
       const currentItem = Object.entries(PAGES).find(item => item[1].title === e.key)?.[1];
       setCurrentItem(currentItem);
       navigate(currentItem?.path || '');
