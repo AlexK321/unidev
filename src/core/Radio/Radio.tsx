@@ -1,8 +1,11 @@
 import { Radio as AntdRadio } from 'antd';
 import styled from 'styled-components';
 
+/**
+ * This is Radio component
+ */
 export const Radio = styled(AntdRadio.Group)`
-  color: ${props => props.theme.colors.font};
+  // color: ${props => props?.theme?.colors?.font || 'green'};
 `;
 
 export const RadioItem = styled(AntdRadio.Button)`
