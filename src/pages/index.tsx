@@ -12,7 +12,6 @@ import { UserInfoPage } from './UserInfoPage';
 
 export const AppRoutes = () => {
   const [currentTheme, setCurrentTheme] = useState<string>('dark');
-  console.log('currentTheme', currentTheme, 'power');
 
   const renderLayout = () => {
     const handleThemeChange = (theme: string) => setCurrentTheme(theme);
