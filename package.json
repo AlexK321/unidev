@@ -36,7 +36,9 @@
     "json-server": "json-server --watch mock/db.json --port 3001",
     "dev": "npm run start & npm run json-server",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "eslintConfig": {
     "extends": [
@@ -57,12 +59,26 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "^7.6.7",
+    "@storybook/addon-interactions": "^7.6.7",
+    "@storybook/addon-links": "^7.6.7",
+    "@storybook/addon-onboarding": "^1.0.10",
+    "@storybook/addon-themes": "^7.6.7",
+    "@storybook/blocks": "^7.6.7",
+    "@storybook/preset-create-react-app": "^7.6.7",
+    "@storybook/react": "^7.6.7",
+    "@storybook/react-webpack5": "^7.6.7",
+    "@storybook/test": "^7.6.7",
     "@types/styled-components": "^5.1.34",
     "eslint": "^8.56.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.2",
     "eslint-plugin-simple-import-sort": "^10.0.0",
-    "prettier": "^3.1.1"
+    "eslint-plugin-storybook": "^0.6.15",
+    "prettier": "^3.1.1",
+    "prop-types": "^15.8.1",
+    "storybook": "^7.6.7",
+    "webpack": "^5.89.0"
   }
 }
