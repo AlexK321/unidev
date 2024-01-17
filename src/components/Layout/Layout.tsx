@@ -1,6 +1,6 @@
 import { ReactElement, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Layout as AntLayout, Menu, MenuProps, MenuTheme, RadioChangeEvent, Typography } from 'antd';
+import { Button, Layout as AntLayout, Menu, MenuProps, MenuTheme, RadioChangeEvent, Typography } from 'antd';
 import Sider, { SiderTheme } from 'antd/es/layout/Sider';
 import { observer } from 'mobx-react-lite';
 
@@ -19,13 +19,16 @@ export const Layout = observer(
     const { device } = useWindowParams();
     const theme = useTheme();
 
+    const { userStore } = useStore();
+
     const [currentItem, setCurrentItem] = useState<IPage | undefined>(undefined);
 
-    const items = Object.values(PAGES).map(item => ({
-      key: item.title,
-      label: item.title,
-    }));
-
+    const items = Object.values(PAGES)
+      .filter(item => item.title !== 'Авторизация')
+      .map(item => ({
+        key: item.title,
+        label: item.title,
+      }));
     const [collapsed, setCollapsed] = useState(false);
 
     const handleChangeTheme = (e: RadioChangeEvent) => {
@@ -37,6 +40,12 @@ export const Layout = observer(
       const currentItem = Object.entries(PAGES).find(item => item[1].title === e.key)?.[1];
       setCurrentItem(currentItem);
       navigate(currentItem?.path || '');
+    };
+
+    const onLogoutClick = () => {
+      localStorage.removeItem('token');
+      userStore.setIsAuth(false);
+      navigate(PAGES.AUTH_PAGE.path);
     };
 
     return (
@@ -80,6 +89,9 @@ export const Layout = observer(
                   <RadioItem value="dark">Dark</RadioItem>
                 </Radio>
               </RadioContainer>
+              <Button type="primary" danger ghost onClick={onLogoutClick}>
+                Выйти
+              </Button>
             </>
           </Footer>
         </AntLayout>

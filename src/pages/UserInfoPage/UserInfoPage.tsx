@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
-import { List, Typography } from 'antd';
+import { Button, List, Typography } from 'antd';
 import { toJS } from 'mobx';
 import { observer } from 'mobx-react-lite';
 
+import { authApi } from '../../api/api';
 import { useStore } from '../../store';
 
 export const UserInfoPage = observer(() => {
@@ -35,6 +36,7 @@ export const UserInfoPage = observer(() => {
           </div>
         )}
       />
+      <Button onClick={authApi.getUsers}>Тестовый запрос</Button>
     </>
   );
 });

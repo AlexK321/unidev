@@ -6,7 +6,7 @@ export interface IPage {
 
 export const PAGES: { [key: string]: IPage } = {
   USER_INFO_PAGE: {
-    path: '/',
+    path: '/userInfo',
     id: 'userInfo',
     title: 'Общая информация',
   },
@@ -19,5 +19,10 @@ export const PAGES: { [key: string]: IPage } = {
     path: '/chart',
     id: 'chart',
     title: 'График',
+  },
+  AUTH_PAGE: {
+    path: '/',
+    id: 'auth',
+    title: 'Авторизация',
   },
 };
