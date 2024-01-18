@@ -24,7 +24,7 @@ export const chartApi = {
 
 //myServer api
 
-const BASE_URL = 'http://localhost:5000';
+export const BASE_URL = 'http://localhost:5000';
 
 const baseApi = axios.create({ baseURL: BASE_URL });
 
@@ -32,6 +32,10 @@ export const authApi = {
   registrations: async (data: any) => baseApi.post('/auth/registrations', data),
   login: async (data: any) => baseApi.post('/auth/login', data),
   getUsers: async () => baseApi.get('/auth/users'),
+};
+
+export const uploadApi = {
+  upload: async (data: any) => baseApi.post('/upload', data),
 };
 
 const authRequestInterceptor = (config: any) => {

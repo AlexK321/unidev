@@ -11,6 +11,7 @@ import { appTheme } from '../theme';
 import { AuthPage } from './AuthPage';
 import { Chart } from './Chart';
 import { Table } from './Table';
+import { TestPage } from './TestPage';
 import { UserInfoPage } from './UserInfoPage';
 
 export const AppRoutes = observer(() => {
@@ -32,6 +33,9 @@ export const AppRoutes = observer(() => {
       <BrowserRouter>
         <Routes>
           <Route path={PAGES.AUTH_PAGE.path} element={<AuthPage />} />
+          <Route element={renderLayout()}>
+            <Route path={PAGES.TEST_PAGE.path} element={<TestPage />} />
+          </Route>
           {isAuth && (
             <Route element={renderLayout()}>
               <Route path={PAGES.USER_INFO_PAGE.path} element={<UserInfoPage />} />s

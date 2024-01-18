@@ -25,4 +25,9 @@ export const PAGES: { [key: string]: IPage } = {
     id: 'auth',
     title: 'Авторизация',
   },
+  TEST_PAGE: {
+    path: '/test',
+    id: 'test',
+    title: 'Тест',
+  },
 };
